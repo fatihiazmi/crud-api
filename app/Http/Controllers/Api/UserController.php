@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::paginate();
+        $users = User::get()->sortByDesc('id');
         return UserResource::collection($users);
     }
 
